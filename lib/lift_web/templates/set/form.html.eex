@@ -5,6 +5,9 @@
     </div>
   <% end %>
 
+  <%= select f, :exercise, @exercises %>
+  <%= error_tag f, :exercise %>
+
   <%= label f, :weight %>
   <%= number_input f, :weight, step: "any" %>
   <%= error_tag f, :weight %>

@@ -131,7 +131,11 @@ defmodule Lift.Workouts do
       ** (Ecto.NoResultsError)
 
   """
-  def get_set!(id), do: Repo.get!(Set, id)
+  def get_set!(id) do
+    Set
+    |> Repo.get!(id)
+    |> preload(:exercise)
+  end
 
   @doc """
   Creates a set.

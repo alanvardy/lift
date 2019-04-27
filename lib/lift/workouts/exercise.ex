@@ -1,9 +1,11 @@
 defmodule Lift.Workouts.Exercise do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Lift.Workouts.Set
 
   schema "exercises" do
     field :title, :string
+    has_many :sets, Set
 
     timestamps()
   end

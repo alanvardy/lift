@@ -10,8 +10,9 @@ defmodule LiftWeb.SetController do
   end
 
   def new(conn, _params) do
+    exercises = Workouts.list_exercises()
     changeset = Workouts.change_set(%Set{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, exercises: exercises)
   end
 
   def create(conn, %{"set" => set_params}) do
