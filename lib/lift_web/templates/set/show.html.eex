@@ -1,0 +1,18 @@
+<h1>Show Set</h1>
+
+<ul>
+
+  <li>
+    <strong>Weight:</strong>
+    <%= @set.weight %>
+  </li>
+
+  <li>
+    <strong>Reps:</strong>
+    <%= @set.reps %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.set_path(@conn, :edit, @set) %></span>
+<span><%= link "Back", to: Routes.set_path(@conn, :index) %></span>

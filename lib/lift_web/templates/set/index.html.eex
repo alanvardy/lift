@@ -1,0 +1,28 @@
+<h1>Listing Sets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Reps</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for set <- @sets do %>
+    <tr>
+      <td><%= set.weight %></td>
+      <td><%= set.reps %></td>
+
+      <td>
+        <%= link "Show", to: Routes.set_path(@conn, :show, set) %>
+        <%= link "Edit", to: Routes.set_path(@conn, :edit, set) %>
+        <%= link "Delete", to: Routes.set_path(@conn, :delete, set), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Set", to: Routes.set_path(@conn, :new) %></span>
